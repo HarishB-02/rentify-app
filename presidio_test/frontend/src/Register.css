@@ -1,0 +1,17 @@
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-group-half {
+    flex: 0 0 48%;
+  }
+  
+  .required {
+    color: red;
+  }
+  
+  .radio-group .form-check-input.is-invalid ~ .form-check-label {
+    color: #dc3545;
+  }
+  
