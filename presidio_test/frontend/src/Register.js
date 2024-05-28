@@ -61,10 +61,10 @@ export const Register = (props) => {
         seller: seller,
       };
       axios({
-        url: "http://localhost:8084/register",
+        url: "http://16.170.222.142:8084/register",
         method: "POST",
         headers: {
-          "Access-Control-Allow-Origin": "http://localhost:8084/register",
+          "Access-Control-Allow-Origin": "http://16.170.222.142:8084/register",
         },
         data: payload,
       });

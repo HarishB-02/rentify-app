@@ -30,7 +30,7 @@ export const Dashboard = ({ userDetails, properties, getProperties }) => {
       userId: userDetails.id
     }
     axios({
-      url: "http://localhost:8084/buyer/like",
+      url: "http://16.170.222.142:8084/buyer/like",
       method: "PUT",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -49,7 +49,7 @@ export const Dashboard = ({ userDetails, properties, getProperties }) => {
     }));
 
     axios({
-      url: "http://localhost:8084/seller/property/" + property.sellerId,
+      url: "http://16.170.222.142:8084/seller/property/" + property.sellerId,
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
@@ -94,10 +94,10 @@ export const Dashboard = ({ userDetails, properties, getProperties }) => {
 
   const handleDeleteConfirm = () => {
     axios({
-        url: "http://localhost:8084/seller/property/deleteProperty/" + currentProperty.propertyId + '/' + userDetails.email,
+        url: "http://16.170.222.142:8084/seller/property/deleteProperty/" + currentProperty.propertyId + '/' + userDetails.email,
         method: "DELETE",
         headers: {
-          "Access-Control-Allow-Origin": "http://localhost:8084/seller/property/deleteProperty/",
+          "Access-Control-Allow-Origin": "http://16.170.222.142:8084/seller/property/deleteProperty/",
         },
       })
       .then(() => {
@@ -122,11 +122,11 @@ export const Dashboard = ({ userDetails, properties, getProperties }) => {
       sellerId: userDetails.id
     };
 
-    let url = "http://localhost:8084/seller/property/addProperty";
+    let url = "http://16.170.222.142:8084/seller/property/addProperty";
     let method = "POST";
 
     if (currentProperty) {
-      url = "http://localhost:8084/seller/property/updateProperty";
+      url = "http://16.170.222.142:8084/seller/property/updateProperty";
       method = "PUT";
       propertyData.propertyId = currentProperty.propertyId
     }

@@ -14,13 +14,13 @@ function App() {
     setUser(userName);
     axios({
       url:
-        "http://localhost:8084/login?email=" +
+        "http://16.170.222.142:8084/login?email=" +
         userName +
         "&password=" +
         password,
       method: "GET",
       headers: {
-        "Access-Control-Allow-Origin": "http://localhost:8084/login",
+        "Access-Control-Allow-Origin": "http://16.170.222.142:8084/login",
       },
     }).then((res) => {
       setUserDetails(res.data);
@@ -33,22 +33,22 @@ function App() {
     if (data.seller) {
       axios({
         url:
-          "http://localhost:8084/seller/property/getProperty/all/" + data.email,
+          "http://16.170.222.142:8084/seller/property/getProperty/all/" + data.email,
         method: "GET",
         headers: {
           "Access-Control-Allow-Origin":
-            "http://localhost:8084/seller/property/getProperty/all/",
+            "http://16.170.222.142:8084/seller/property/getProperty/all/",
         },
       }).then((res) => {
         setProperties(res.data);
       });
     } else {
       axios({
-        url: "http://localhost:8084/buyer/allProperty",
+        url: "http://16.170.222.142:8084/buyer/allProperty",
         method: "GET",
         headers: {
           "Access-Control-Allow-Origin":
-            "http://localhost:8084/buyer/allProperty",
+            "http://16.170.222.142:8084/buyer/allProperty",
         },
       }).then((res) => {
         setProperties(res.data);
